@@ -139,10 +139,26 @@ class ProjectService {
   static async getAll() {
     const [rows] = await db.pool.execute(`SELECT * FROM proyecto`);
 
-    return rows.map(p => ({
-      ...p,
-      empleados_por_skill: this.parseJSON(p.empleados_por_skill)
-    }));
+    return rows.map(p => {
+      let jornadas = 0;
+
+      if (p.fecha_inicio) {
+        const inicio = new Date(p.fecha_inicio);
+        const hoy = new Date();
+
+        const diffTime = hoy - inicio;
+        jornadas = Math.max(
+          0,
+          Math.floor(diffTime / (1000 * 60 * 60 * 24))
+        );
+      }
+
+      return {
+        ...p,
+        cantidad_actual_jornadas: jornadas, // ✅ recalculado siempre
+        empleados_por_skill: this.parseJSON(p.empleados_por_skill)
+      };
+    });
   }
 
   // ==============================

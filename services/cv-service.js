@@ -3,38 +3,21 @@ class CVService {
     // Lenguajes
     'python', 'javascript', 'typescript', 'sql', 'java', 'c++', 'bash', 'r',
     'html', 'css', 'xhtml',
-
     // Backend y web
     'node', 'node.js', 'express', 'nestjs',
     'fastapi', 'flask', 'django', '.net',
     'sap cap', 'odata', 'cds', 'apis rest',
-
     // Frontend
     'angular', 'react', 'vue',
     'jsf', 'primefaces', 'qt',
-
     // SAP
     'sap', 'sap hana', 'sap btp', 'successfactors',
-
     // Bases de datos
     'postgresql', 'mongodb', 'mysql', 'sqlite',
     'amazon athena',
-
-    // AI / data stores
-    'chromadb', 'qdrant',
-
     // Cloud & DevOps
     'aws', 'azure', 'google cloud',
     'docker', 'kubernetes', 'ci/cd',
-
-    // Herramientas
-    'git', 'linux', 'debian', 'postman',
-    'vs code', 'pycharm', 'maven', 'tomcat', 'dbeaver',
-
-    // Data & Analytics
-    'pandas', 'superset', 'rstudio', 'google colab',
-    'plateau report designer',
-
     // UX
     'diseño ux'
   ];
