@@ -122,12 +122,20 @@ class CVService {
   // =============================
   // SKILLS
   // =============================
+  
+static escapeRegex(text) {
+    return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
   static extractSkills(text) {
     const normalized = this.normalizeText(text).toLowerCase();
     const found = new Set();
 
     for (const skill of this.TECH_SKILLS) {
-      const regex = new RegExp(`\\b${skill.replace('.', '\\.')}\\b`, 'i');
+      const safeSkill = this.escapeRegex(skill);
+
+      const regex = new RegExp(`(^|\\s|,)${safeSkill}($|\\s|,)`, 'i');
+
       if (regex.test(normalized)) {
         found.add(skill);
       }
@@ -135,6 +143,7 @@ class CVService {
 
     return [...found];
   }
+
 
 // =============================
 // EXPERIENCIA (DESDE CABECERA)
