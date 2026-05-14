@@ -6,7 +6,8 @@ class CVService {
     'typescript', 'javascript', 'java', 'python',
     'docker', 'kubernetes',
     'aws', 'azure',
-    'postgresql', 'mongodb', 'mysql'
+    'postgresql', 'mongodb', 'mysql',
+    'diseño ux',
   ];
 
   // MESES (JS: 0–11)
